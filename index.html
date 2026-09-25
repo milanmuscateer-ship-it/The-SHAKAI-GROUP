@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Shakria Group</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 4rem);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      color: #000;
+    }
+
+    .subtitle {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: #333;
+      text-transform: uppercase;
+    }
+
+    .name-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(180px, 220px));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .history-box {
+      width: min(520px, 100%);
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: white;
+      border: 2px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      border-radius: 10px;
+      font-size: clamp(1rem, 1.5vw, 1.5rem);
+      font-weight: 700;
+      color: #000;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .history-box:hover,
+    .history-box:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 215, 0, 0.95), 0 0 24px rgba(255, 215, 0, 0.8), 0 8px 18px rgba(0, 0, 0, 0.14);
+      outline: none;
+    }
+
+    .name-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+      padding: 20px;
+      font-size: clamp(1.2rem, 2vw, 2.1rem);
+      font-weight: 700;
+      color: #000;
+      border: 2px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .name-box:hover,
+    .name-box:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 215, 0, 0.95), 0 0 24px rgba(255, 215, 0, 0.8), 0 8px 18px rgba(0, 0, 0, 0.14);
+      outline: none;
+    }
+
+    .green { background: #4CAF50; }
+    .yellow { background: #FFD54F; }
+    .red { background: #EF5350; }
+    .blue { background: #42A5F5; }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .modal-content {
+      width: min(560px, 100%);
+      background: white;
+      border-radius: 14px;
+      padding: 24px 22px;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.2);
+      text-align: left;
+    }
+
+    .modal-content h2 {
+      margin: 0 0 12px;
+      font-size: 1.8rem;
+    }
+
+    .modal-content p {
+      margin: 0;
+      line-height: 1.6;
+      font-size: 1.02rem;
+      color: #222;
+    }
+
+    .close-btn {
+      display: block;
+      margin-top: 18px;
+      border: none;
+      background: #111;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>The Shakria Group</h1>
+    <p class="subtitle">The Indian Miguels</p>
+    <div class="name-grid">
+      <div class="name-box green" tabindex="0" data-name="Austin Naijo" data-info="He is the Tlauncher GOD so he is kinda stupid but he has elite ball knowledge in minecraft, his playtime is like 9999999999 days of minecraft, and he is still saying 'thats not that much' so yeah, he is also failing school which kinda make sense considering he plays minecraft allday.">Austin Naijo</div>
+      <div class="name-box yellow" tabindex="0" data-name="Milan Manoj" data-info="This guy is like alright at everything, he can jump all the way at the moon, he is doing good at most subject, but he is kinda failing science, the only sport this dude plays it badminton and thats it, dont get me wrong he is kinda tiny good, but thats the only thing he does thats productive, and he plays geometry dash alot but he doesnt play that much, i also forgot to say that he does piano alot and um yea">Milan Manoj</div>
+      <div class="name-box red" tabindex="0" data-name="Stenin Skaria" data-info="Stenin, he is the reason why we named this group 'The Shakria Group', This guy is really good a badminton and he used to be good at football, but now he is washed at football, he is really good at math but he is so bad at every subject, im not gonna lie, he is pretty fast and his staimina is crazy, but i dont really have nothing to say expect he the main character in this group">Stenin Skaria</div>
+      <div class="name-box blue" tabindex="0" data-name="Abel Shinoj" data-info="Abel, the shortest one in our group, but even tho he is the shortest, he still pretty athletic for a short person, he doing very good at school, he is also good a badminton but i think the rest of the group are better than him, which is fine okay? its ok son, we all make mistakes, but i really dont know what to say lowkey.">Abel Shinoj</div>
+    </div>
+
+    <div class="history-box" tabindex="0" id="historyBox">The history of Shakria group</div>
+  </div>
+
+  <div class="modal" id="infoModal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h2 id="modalTitle">Name</h2>
+      <p id="modalText">Info</p>
+      <button class="close-btn" type="button" id="closeModal">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('infoModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalText = document.getElementById('modalText');
+    const closeModal = document.getElementById('closeModal');
+    const historyBox = document.getElementById('historyBox');
+
+    const openHistory = () => {
+      modalTitle.textContent = 'The history of Shakria group';
+      modalText.textContent = 'The Shakria Group, the history is that, one day, we were all chilling in catechism, and then, someone took the roll, but then, the guy said "Stenin Shakria" instead of "Skaria", and then everyone started laughing and laughing, and thats how we got the name, "The Shakria Group".';
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
+    };
+
+    historyBox.addEventListener('click', openHistory);
+    historyBox.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openHistory();
+      }
+    });
+
+    document.querySelectorAll('.name-box').forEach((box) => {
+      const openInfo = () => {
+        modalTitle.textContent = box.dataset.name;
+        modalText.textContent = box.dataset.info;
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden', 'false');
+      };
+
+      box.addEventListener('click', openInfo);
+      box.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openInfo();
+        }
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden', 'true');
+    });
+
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    });
+  </script>
+</body>
+</html>
